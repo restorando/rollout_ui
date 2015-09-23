@@ -13,8 +13,16 @@ module RolloutUi
       rollout.instance_variable_get("@groups").keys
     end
 
+    def collections
+      rollout.collections.keys
+    end
+
     def add_feature(feature)
       redis.sadd(:features, feature)
+    end
+
+    def add_collection(collection, *users)
+      rollout.define_id_collection(collection.to_sym, users)
     end
 
     def features

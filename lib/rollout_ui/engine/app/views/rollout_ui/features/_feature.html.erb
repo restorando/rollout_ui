@@ -13,6 +13,20 @@
 </div>
 
 <div class="col">
+  <%= form_tag feature_path(feature.name), :class => "collections_form", :method => :put, :remote => true do %>
+    <label>Collections</label>
+    <select id="<%= feature.name %>_collections" class="collections" name="collections[]" multiple="multiple" data-placeholder="Choose a collection">
+      <% @wrapper.collections.each do |collection| %>
+        <option<%= " selected='selected'" if feature.collections.include?(collection) %>><%= collection %></option>
+      <% end %>
+    </select>
+    <%= hidden_field_tag "collections[]", "" %>
+    <input type="submit" value="Save" />
+  <% end %>
+</div>
+
+<div></div>
+<div class="col">
   <%= form_tag feature_path(feature.name), :class => "groups_form", :method => :put, :remote => true do %>
     <label>Groups</label>
     <select id="<%= feature.name %>_groups" class="groups" name="groups[]" multiple="multiple" data-placeholder="Choose a group">

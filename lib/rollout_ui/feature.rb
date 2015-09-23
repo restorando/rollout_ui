@@ -17,6 +17,10 @@ module RolloutUi
       rollout.get(feature_for(name)).groups
     end
 
+    def collections
+      rollout.feature_collections(name).keys
+    end
+
     def user_ids
       rollout.get(feature_for(name)).users
     end
@@ -28,6 +32,10 @@ module RolloutUi
     def groups=(groups)
       self.groups.each { |group| rollout.deactivate_group(name, group) }
       groups.each { |group| rollout.activate_group(name, group) unless group.to_s.empty? }
+    end
+
+    def collections=(collections)
+      collections.each { |collection| rollout.add_collection_to_feature(collection, name) }
     end
 
     def user_ids=(ids)

@@ -1,14 +1,14 @@
 GIT
-  remote: git://github.com/jamesgolick/rollout.git
-  revision: 70973c95b38d751a690690b4f1ad7b8af8865f22
+  remote: git://github.com/duduribeiro/rollout.git
+  revision: ed63e999d43bff10a7640b85afe162d8b2e26285
+  branch: id-collections
   specs:
-    rollout (2.0.0c)
-      redis
+    rollout (2.1.0)
 
 PATH
   remote: .
   specs:
-    rollout_ui (0.2.0)
+    rollout_ui (0.3.0)
       rollout
 
 GEM

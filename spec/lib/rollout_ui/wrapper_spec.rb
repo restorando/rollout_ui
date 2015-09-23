@@ -33,6 +33,14 @@ describe RolloutUi::Wrapper do
     end
   end
 
+  describe "#add_collection" do
+    it "adds a collection to the list of collections" do
+      @rollout_ui.add_collection(:my_collection, [100, 101])
+
+      @rollout_ui.collections.should == [:my_collection]
+    end
+  end
+
   describe "#features" do
     it "returns an empty array if no features have been requested" do
       @rollout_ui.features.should == []

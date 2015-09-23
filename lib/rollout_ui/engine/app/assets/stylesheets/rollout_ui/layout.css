@@ -40,19 +40,19 @@ h1 img {
   margin: 43px 0 15px;
 }
 
-#features {
+#group {
   list-style-type: none;
   padding: 0px;
 }
 
-#features .feature {
+#group .item {
   background-color: #121212;
   padding: 20px 0;
   border-radius: 10px;
   margin-bottom: 25px;
 }
 
-#features .feature h2 {
+#group .item h2 {
   margin: 0px 0 23px;
   text-align: center;
   font-size: 20px;
@@ -60,11 +60,11 @@ h1 img {
   letter-spacing: 1px;
 }
 
-#features .feature .groups {
+#group .item .groups {
   height: 1.5em;
 }
 
-#features .feature label {
+#group .item label {
   float: left;
   font-size: 14px;
   line-height: 2em;
@@ -72,30 +72,30 @@ h1 img {
   margin-right: 10px;
 }
 
-#features .feature select,
-#features .feature .users {
+#group .item select,
+#group .item .users {
   line-height: 26px;
 }
 
-#features .feature .users {
+#group .item .users {
   width: 172px;
   line-height: 27px;
 }
 
-#features .feature .percentage {
+#group .item .percentage {
   width: 187px;
 }
 
-#features .feature .groups {
+#group .item .groups {
   width: 213px;
 }
 
-#features .feature .chzn-container-multi .chzn-choices {
+#group .item .chzn-container-multi .chzn-choices {
   -webkit-border-radius: 4px;
   -moz-border-radius:    4px;
   border-radius:         4px;
 }
-#features input[type='submit'] {
+#group input[type='submit'] {
   display: none;
 }
 
@@ -105,4 +105,52 @@ h1 img {
   text-align: center;
   color: #f4b71d;
   text-shadow: 0 -1px 2px rgba(0,0,0,1);
+}
+
+#group_add {
+  display: none;
+}
+
+#save_group {
+  margin-left: 6px;
+}
+
+#new_group {
+  color: #fac443;
+}
+#new_group:visited {
+  color: #fac443;
+}
+
+nav ul li {
+  display: inline-block;
+}
+nav ul {
+  margin:0;
+  padding:0;
+}
+nav ul li {
+  color:#FFF;
+  display:inline-block;
+  margin:0 6px 0 0;
+  padding:4px 8px;
+}
+nav ul li a{
+  text-decoration: none;
+  color:#fac443;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+nav ul li a.active {
+  border-radius: 3px;
+  background-color:rgba(0,0,0,0.6);
+  padding:4px 10px;
+}
+nav ul li a:visited {
+  color:#fac443;
+}
+nav ul li a:hover {
+  text-decoration: none;
+  color:#FFF;
+  background-color:rgba(0,0,0,0.2);
 }

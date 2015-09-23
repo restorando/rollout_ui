@@ -9,10 +9,11 @@ if defined?(Rails) && Rails::VERSION::STRING.to_f >= 3.1
 end
 
 module RolloutUi
-  autoload :Version, 'rollout_ui/version'
-  autoload :Wrapper, 'rollout_ui/wrapper'
-  autoload :Feature, 'rollout_ui/feature'
-  autoload :Server,  'rollout_ui/server'
+  autoload :Version,    'rollout_ui/version'
+  autoload :Wrapper,    'rollout_ui/wrapper'
+  autoload :Collection, 'rollout_ui/collection'
+  autoload :Feature,    'rollout_ui/feature'
+  autoload :Server,     'rollout_ui/server'
 
   def self.wrap(rollout)
     @@rollout = rollout

@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe RolloutUi::Feature do
+
   before do
     # Request a feature to prime RolloutUi::Wrapper rollout instance
     $rollout.active?(:featureA, mock(:user, :id => 5))
