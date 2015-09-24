@@ -90,6 +90,10 @@ h1 img {
   width: 213px;
 }
 
+#group .item .collections {
+  width: 187px;
+}
+
 #group .item .chzn-container-multi .chzn-choices {
   -webkit-border-radius: 4px;
   -moz-border-radius:    4px;
