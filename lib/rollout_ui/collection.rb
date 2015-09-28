@@ -29,7 +29,7 @@ module RolloutUi
     end
 
     def group_for(name)
-      rollout.instance_variable_get(:@groups).select{|elem| elem == name}.first
+      rollout.instance_variable_get(:@groups).select { |elem| elem == name}.first
     end
   end
 end
