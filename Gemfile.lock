@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/duduribeiro/rollout.git
-  revision: ed63e999d43bff10a7640b85afe162d8b2e26285
+  remote: git://github.com/restorando/rollout.git
+  revision: bd497d4f50b5218d2103ba790dced558c6cabf02
   branch: id-collections
   specs:
     rollout (2.1.0)
