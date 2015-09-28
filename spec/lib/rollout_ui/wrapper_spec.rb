@@ -37,7 +37,7 @@ describe RolloutUi::Wrapper do
     it "adds a collection to the list of collections" do
       @rollout_ui.add_collection(:my_collection, [100, 101])
 
-      @rollout_ui.collections.should == [:my_collection]
+      expect(@rollout_ui.collections).to eq %i[my_collection]
     end
   end
 

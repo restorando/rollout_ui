@@ -51,7 +51,7 @@ describe "Engine" do
           click_button "Save"
         end
 
-        $rollout.active?(:featureA, user).should be_true
+        expect($rollout).to be_active(:featureA, user)
       end
 
       it "shows the selected collection" do
@@ -62,7 +62,7 @@ describe "Engine" do
           click_button "Save"
         end
 
-        page.should have_css(".collections option[selected='selected']", :text => "my_collection")
+        expect(page).to have_css(".collections option[selected='selected']", :text => "my_collection")
       end
     end
 
@@ -143,8 +143,8 @@ describe "Engine" do
     it 'shows all collections' do
       visit '/rollout/collections'
 
-      page.should have_content('my_collection')
-      page.should have_content('another_collection')
+      expect(page).to have_content('my_collection')
+      expect(page).to have_content('another_collection')
     end
 
   end
@@ -154,7 +154,7 @@ describe "Engine" do
       post '/rollout/collections', :collection_name => "my_new_collection"
       visit '/rollout/collections'
 
-      page.should have_content('my_new_collection')
+      expect(page).to have_content('my_new_collection')
     end
   end
 
@@ -166,7 +166,7 @@ describe "Engine" do
 
     it 'updates the collection with new users' do
       put '/rollout/collections/new_collection', :users => [ "101", "654" ]
-      RolloutUi::Collection.new(:new_collection).user_ids.should eq %w[101 654]
+      expect(RolloutUi::Collection.new(:new_collection).user_ids).to eq %w[101 654]
     end
   end
 
