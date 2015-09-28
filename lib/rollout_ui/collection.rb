@@ -1,5 +1,5 @@
 module RolloutUi
-  class Collection 
+  class Collection
     User = Struct.new(:id)
 
     attr_reader :name
@@ -29,7 +29,7 @@ module RolloutUi
     end
 
     def group_for(name)
-      rollout.instance_variable_get(:@groups).select { |elem| elem == name}.first
+      rollout.instance_variable_get(:@groups).find { |elem| elem == name}
     end
   end
 end

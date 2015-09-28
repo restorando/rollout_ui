@@ -1,4 +1,3 @@
-require 'pry'
 module RolloutUi
   class ApplicationController < ActionController::Base
     user      = RolloutUi.config.rails_user rescue nil
