@@ -35,6 +35,7 @@ module RolloutUi
     end
 
     def collections=(collections)
+      rollout.clear_collections_from_feature(name)
       collections.each { |collection| rollout.add_collection_to_feature(collection, name) }
     end
 
