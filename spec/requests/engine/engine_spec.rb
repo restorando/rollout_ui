@@ -62,7 +62,7 @@ describe "Engine" do
           click_button "Save"
         end
 
-        expect(page).to have_css(".collections option[selected='selected']", :text => "my_collection")
+        expect(page).to have_css(".collections option[selected='selected']", text: "my_collection")
       end
     end
 
