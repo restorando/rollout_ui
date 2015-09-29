@@ -4,7 +4,7 @@ module RolloutUi
 
     def index
       @collections = @wrapper.collections.
-                        map{ |collection| RolloutUi::Collection.new(collection) }
+        map{  |collection| RolloutUi::Collection.new(collection) }
     end
 
     def update
