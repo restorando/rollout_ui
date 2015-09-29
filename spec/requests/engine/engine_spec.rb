@@ -38,6 +38,34 @@ describe "Engine" do
       end
     end
 
+    describe "collections" do
+      before do
+        $rollout.define_id_collection(:my_collection, [5])
+      end
+
+      it "allows selecting of collections" do
+        visit "/rollout"
+
+        within("#featureA .collections_form") do
+          select "my_collection", :from => "collections[]"
+          click_button "Save"
+        end
+
+        expect($rollout).to be_active(:featureA, user)
+      end
+
+      it "shows the selected collection" do
+        visit "/rollout"
+
+        within("#featureA .collections_form") do
+          select "my_collection", :from => "collections[]"
+          click_button "Save"
+        end
+
+        expect(page).to have_css(".collections option[selected='selected']", text: "my_collection")
+      end
+    end
+
     describe "groups" do
       before do
         user.stub(:beta_tester? => true)
@@ -105,5 +133,42 @@ describe "Engine" do
       end
     end
   end
+
+  describe 'GET /rollout/collections' do
+    before do
+      $rollout.define_id_collection(:my_collection)
+      $rollout.define_id_collection(:another_collection)
+    end
+
+    it 'shows all collections' do
+      visit '/rollout/collections'
+
+      expect(page).to have_content('my_collection')
+      expect(page).to have_content('another_collection')
+    end
+
+  end
+
+  describe 'POST /rollout/collections' do
+    it 'creates a new collection' do
+      post '/rollout/collections', :collection_name => "my_new_collection"
+      visit '/rollout/collections'
+
+      expect(page).to have_content('my_new_collection')
+    end
+  end
+
+  describe 'PUT /rollout/collections' do
+
+    before do
+      $rollout.define_id_collection(:new_collection)
+    end
+
+    it 'updates the collection with new users' do
+      put '/rollout/collections/new_collection', :users => [ "101", "654" ]
+      expect(RolloutUi::Collection.new(:new_collection).user_ids).to eq %w[101 654]
+    end
+  end
+
 end
 

@@ -1,0 +1,15 @@
+<h2><%= collection.name %></h2>
+
+<div class="col">
+  <%= form_tag collection_path(collection.name), :class => "users_form", :method => :put, :remote => true do %>
+    <label>User IDs</label>
+    <input class="users" type="text" name="users[]" value="<%= collection.user_ids.join(",") %>" data-placeholder="Enter User ID" />
+    <input type="submit" value="Save" />
+  <% end %>
+</div>
+
+<div class="col">
+</div>
+
+<div class="col">
+</div>

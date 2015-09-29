@@ -1,0 +1,28 @@
+<p id="new_group_wrapper"><a href="#" id="new_group">New Collection</a></p>
+<span id="group_add">
+  <%= form_tag collections_path, :method => :post do %>
+    <label>Collection Name: </label>
+    <input type="text" name="collection_name" />
+    <input type="submit" value="Save" />
+  <% end %>
+</span>
+<ul id="group">
+  <% @collections.each do |collection| %>
+    <li id="<%= collection.name %>" class="item clearfix"><%= render 'collection', collection: collection%></li>
+  <% end %>
+</ul>
+
+<% content_for :onready do %>
+  $("select").chosen({no_results_text: "No groups matched"});
+  $("input.users").chosen();
+
+  $("select, input.users").change(function() {
+    $(this).closest("form").submit();
+  });
+
+  $("#new_group").click(function() {
+    $("#group_add").show();
+    $("#new_group_wrapper").hide();
+  });
+
+<% end %>

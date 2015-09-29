@@ -10,6 +10,17 @@
   <body>
     <div id="container">
       <h1><%= image_tag "rollout_ui/rollout.png", :alt => "Rollout" %></h1>
+      <nav>
+        <ul>
+          <li>
+            <%= link_to "Features", root_path, class: "#{"active" if current_page? root_path}"%>
+          </li>
+          <li>
+            <%= link_to "Collections", collections_path, class: "#{"active" if current_page? controller: 'collections'}"%>
+          </li>
+        </ul>
+      </nav>
+      <br>
       <%= yield %>
     </div>
 

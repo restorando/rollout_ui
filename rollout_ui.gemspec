@@ -21,7 +21,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('rails')
   gem.add_development_dependency('sinatra')
   gem.add_development_dependency('uglifier')
-  gem.add_development_dependency('rspec-rails')
+  gem.add_development_dependency('rspec-rails', '2.11.4')
   gem.add_development_dependency('capybara')
   gem.add_development_dependency('launchy')
   gem.add_development_dependency('rack-test')
