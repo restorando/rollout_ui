@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/restorando/rollout.git
-  revision: 7ce1d7fd338ddf0a799061e54fd359ca4e97ac8b
+  revision: 8420f973a4129fdcfc10dbeb0bca14ac685a7a5d
   specs:
     rollout (2.1.0)
 

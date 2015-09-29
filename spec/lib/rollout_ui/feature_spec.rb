@@ -55,6 +55,38 @@ describe RolloutUi::Feature do
     end
   end
 
+  describe "#collections" do
+
+    before do
+      $rollout.clear_collections_from_feature(@feature.name)
+      $rollout.define_id_collection(:my_collection,  [100, 200])
+      $rollout.define_id_collection(:new_collection, [300, 400])
+    end
+
+    it 'returns all collections from a specific feature' do
+      $rollout.add_collection_to_feature(:my_collection,  @feature.name)
+      $rollout.add_collection_to_feature(:new_collection, @feature.name)
+      expect(@feature.collections).to have(2).items
+    end
+
+  end
+
+  describe "#collections=" do
+
+    before do
+      $rollout.define_id_collection(:my_collection,        [100, 200])
+      $rollout.define_id_collection(:new_collection,       [300, 400])
+      $rollout.add_collection_to_feature(:my_collection,   @feature.name)
+      $rollout.add_collection_to_feature(:new_collection,  @feature.name)
+    end
+
+    it 'clear old collections before inserting' do
+      @feature.collections = %w[my_collection]
+      expect(@feature.collections).to have(1).items
+    end
+
+  end
+
   describe "#users=" do
     it "sets the activated users for the feature" do
       @feature.user_ids = [5, "7", ""]
