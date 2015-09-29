@@ -3,4 +3,4 @@ source 'http://rubygems.org'
 # Specify your gem's dependencies in rollout_ui.gemspec
 gemspec
 
-gem 'rollout', github: 'restorando/rollout', branch: 'id-collections'
+gem 'rollout', github: 'restorando/rollout'

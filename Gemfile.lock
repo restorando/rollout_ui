@@ -1,7 +1,6 @@
 GIT
   remote: git://github.com/restorando/rollout.git
-  revision: bd497d4f50b5218d2103ba790dced558c6cabf02
-  branch: id-collections
+  revision: 7ce1d7fd338ddf0a799061e54fd359ca4e97ac8b
   specs:
     rollout (2.1.0)
 
